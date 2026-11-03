@@ -100,6 +100,35 @@ td input:focus,td select:focus { outline:2px solid #aac5bb; background:white; }
 .receipt-value { padding:11px; }
 .signature-box { margin-top:24px; border-top:1px solid #222; padding-top:15px; display:grid; grid-template-columns:1fr 230px; gap:20px; min-height:110px; }
 .signature-pad { border-bottom:1px solid #333; display:flex; align-items:flex-end; justify-content:center; padding-bottom:7px; font-family:"Noto Serif TC"; font-size:22px; }
+.ut-receipt { font-family: "DFKai-SB", "BiauKai", "標楷體", serif; padding: 34px 42px 30px; font-size: 15px; }
+.ut-title { text-align:center; font-size:25px; font-weight:700; letter-spacing:.05em; margin: 0 0 24px; }
+.ut-form { display:grid; gap:0; }
+.ut-row { min-height:50px; display:grid; grid-template-columns:155px 22px 82px minmax(0,1fr); align-items:center; }
+.ut-label { font-weight:700; text-align:justify; text-align-last:justify; }
+.ut-colon,.ut-currency { font-weight:700; }
+.ut-money { display:grid; grid-template-columns:repeat(5, minmax(36px,1fr) 25px); align-items:end; }
+.ut-money-digit { text-align:center; border-bottom:1px solid #111; padding:0 3px 5px; min-width:34px; }
+.ut-money-unit { padding-left:5px; }
+.ut-deduction { display:flex; align-items:flex-end; gap:5px; }
+.ut-deduction span { min-width:115px; padding:0 8px 5px; border-bottom:1px solid #111; }
+.ut-health { position:relative; }
+.ut-health-note { position:absolute; left:58%; font:700 11px/1.45 "Noto Sans TC",sans-serif; white-space:nowrap; }
+.ut-person { grid-template-columns:155px 22px minmax(100px,1fr) 145px minmax(120px,1fr); }
+.ut-phone-label,.ut-bank-label { font-weight:700; margin-left:12px; }
+.ut-fill { min-height:30px; border-bottom:1px solid #111; padding:4px 8px; }
+.ut-row .wide { grid-column:3/-1; }
+.ut-address { min-height:76px; align-items:start; padding-top:10px; }
+.ut-address .ut-fill { min-height:57px; }
+.ut-bank { grid-template-columns:155px 22px minmax(90px,1fr) 125px minmax(135px,1.2fr); }
+.ut-date { grid-template-columns:auto 64px auto 48px auto 48px auto; justify-content:center; gap:8px; min-height:55px; font-weight:700; }
+.ut-date-value { text-align:center; border-bottom:1px solid #111; min-width:40px; padding-bottom:4px; }
+.ut-signature { margin-top:6px; min-height:64px; border-bottom:3px double #111; text-align:right; font-size:18px; font-weight:700; padding:10px 35px 24px 0; }
+.ut-signature span { display:inline-block; min-width:180px; border-bottom:1px solid #111; margin:0 7px; min-height:26px; text-align:center; }
+.ut-consent { padding-top:16px; font-size:13px; line-height:1.55; }
+.ut-consent h3 { margin:0 0 9px; font-size:16px; }
+.ut-consent p { margin:4px 0; }
+.ut-consent-sign { text-align:right; font-size:18px; font-weight:700; margin-top:20px; }
+.ut-consent-sign span { display:inline-block; min-width:210px; min-height:28px; border-bottom:1px solid #111; text-align:center; }
 .empty-state { padding:50px 24px; text-align:center; color:var(--muted); }
 .empty-state strong { display:block; color:var(--ink); font-size:18px; margin-bottom:5px; }
 .modal-backdrop { position:fixed; inset:0; background:rgba(14,29,25,.56); display:grid; place-items:center; padding:20px; z-index:100; }
@@ -128,6 +157,7 @@ td input:focus,td select:focus { outline:2px solid #aac5bb; background:white; }
   .receipt-paper { padding:25px 20px; min-height:0; }
   .receipt-line { grid-template-columns:105px 1fr; }
   .signature-box { grid-template-columns:1fr; }
+  .ut-receipt { padding:24px 18px; font-size:12px; min-width:690px; }
 }
 @media print {
   body { background:white; }
@@ -136,4 +166,5 @@ td input:focus,td select:focus { outline:2px solid #aac5bb; background:white; }
   .content { padding:0; }
   .receipt-layout { display:block; }
   .receipt-paper { border:0; box-shadow:none; min-height:auto; max-width:none; padding:10mm; }
+  .ut-receipt { width:210mm; min-height:297mm; padding:9mm 12mm; margin:0; }
 }
