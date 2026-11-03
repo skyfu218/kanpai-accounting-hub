@@ -1,0 +1,13 @@
+{
+  "projects": {},
+  "targets": {
+    "ams-athletic-intelligence": {
+      "hosting": {
+        "kanpai": [
+          "kanpai-accounting-skyfu218"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
