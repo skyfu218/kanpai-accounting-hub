@@ -21,15 +21,23 @@ button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
 .shell { min-height: 100vh; display: grid; grid-template-columns: 252px minmax(0,1fr); }
 .sidebar { background: var(--forest); color: white; padding: 28px 18px; position: sticky; top:0; height:100vh; display:flex; flex-direction:column; }
-.brand { display:flex; gap:12px; align-items:center; padding: 0 8px 25px; border-bottom: 1px solid rgba(255,255,255,.13); }
-.brand-mark { width:42px; height:42px; border:1px solid rgba(255,255,255,.55); border-radius:50%; display:grid; place-items:center; font-family:"Noto Serif TC"; font-size:20px; color:#f0cd82; }
-.brand strong { display:block; font-family:"Noto Serif TC"; font-size:18px; letter-spacing:.08em; }
-.brand small { color:#a9c3bc; }
+.brand { display:grid; gap:10px; padding: 0 8px 22px; border-bottom: 1px solid rgba(255,255,255,.13); }
+.brand-logo { width:100%; height:48px; object-fit:contain; background:#fff; border-radius:8px; padding:5px; }
+.brand strong { display:block; font-family:"Noto Serif TC"; font-size:13px; line-height:1.45; }
+.brand small { display:block; margin-top:3px; color:#a9c3bc; letter-spacing:.12em; }
 .nav { padding-top: 24px; display:grid; gap:7px; }
 .nav button { border:0; color:#c9d9d4; background:transparent; text-align:left; padding:12px 14px; border-radius:10px; display:flex; gap:11px; align-items:center; }
 .nav button:hover,.nav button.active { background:rgba(255,255,255,.12); color:#fff; }
 .nav .icon { width:24px; text-align:center; }
-.sidebar-foot { margin-top:auto; padding:16px 10px 0; font-size:12px; color:#a9c3bc; line-height:1.65; }
+.sidebar-foot { margin-top:auto; padding:15px 4px 0; color:#a9c3bc; }
+.society-footer { display:grid; grid-template-columns:48px minmax(0,1fr); align-items:center; gap:10px; }
+.society-mark { width:48px; height:48px; overflow:hidden; background:white; border-radius:2px; position:relative; }
+.society-mark img { position:absolute; height:100%; width:auto; max-width:none; left:0; top:0; }
+.society-copy { min-width:0; display:grid; gap:3px; padding-left:10px; border-left:1px solid rgba(198,148,66,.55); }
+.society-copy strong { color:#eef4f1; font-size:9px; line-height:1.35; }
+.society-copy b { font-size:8px; letter-spacing:.12em; font-weight:500; }
+.society-copy small { font-size:8px; }
+.storage-note { margin-top:11px; font-size:10px; color:#91aaa3; }
 .main { min-width:0; }
 .topbar { min-height:82px; display:flex; justify-content:space-between; align-items:center; padding:16px 34px; background:rgba(255,253,248,.84); border-bottom:1px solid var(--line); backdrop-filter:blur(14px); position:sticky; top:0; z-index:10; }
 .title h1 { margin:0; font-family:"Noto Serif TC"; font-size:25px; }
@@ -168,17 +176,50 @@ td input:focus,td select:focus { outline:2px solid #aac5bb; background:white; }
 .close { border:0; background:transparent; font-size:24px; }
 .hidden { display:none !important; }
 .mobile-menu { display:none; }
+.login-page { min-height:100vh; display:grid; grid-template-columns:minmax(360px,1.05fr) minmax(420px,.95fr); background:#f3f2ec; }
+.login-panel { padding:58px clamp(38px,7vw,92px); display:flex; flex-direction:column; color:white; background:linear-gradient(150deg,#0d3029,#17483e 62%,#246356); }
+.login-society-logo { width:min(430px,85%); height:auto; background:white; border-radius:12px; padding:12px; }
+.login-copy { margin:auto 0; }
+.login-copy>p { color:#e2c47f; font-weight:800; letter-spacing:.14em; }
+.login-copy h1 { margin:8px 0 20px; font:900 clamp(44px,6vw,72px)/1.1 "Noto Serif TC",serif; letter-spacing:.08em; }
+.login-copy span { color:#c7d9d4; }
+.login-copyright { color:#9dbbb3; font-size:11px; letter-spacing:.04em; }
+.login-card-wrap { display:grid; place-items:center; padding:32px; }
+.login-card { width:min(430px,100%); display:grid; gap:20px; padding:38px; background:#fffdf8; border:1px solid #dedfd8; border-radius:20px; box-shadow:0 28px 70px rgba(36,52,46,.13); }
+.login-card-head { text-align:center; }
+.login-logo-crop { display:block; width:82px; height:82px; overflow:hidden; position:relative; margin:0 auto 15px; background:white; border:1px solid #e1e4dd; border-radius:15px; box-shadow:0 10px 24px rgba(31,64,55,.12); }
+.login-logo-crop img { position:absolute; height:100%; width:auto; max-width:none; left:0; top:0; }
+.login-card h2 { margin:0; font:800 25px "Noto Serif TC",serif; }
+.login-card-head p { margin:7px 0 0; color:var(--muted); font-size:13px; }
+.password-wrap { position:relative; }
+.password-wrap input { padding-right:62px; }
+.password-wrap button { position:absolute; right:7px; top:50%; transform:translateY(-50%); border:0; background:transparent; color:var(--forest-2); font-size:12px; font-weight:700; padding:6px; }
+.login-error { min-height:20px; margin:-6px 0 -8px; color:var(--red); font-size:12px; }
+.login-submit { display:flex; justify-content:space-between; align-items:center; border:0; border-radius:10px; padding:13px 18px; background:var(--forest); color:white; font-weight:700; }
+.login-submit:disabled { opacity:.65; cursor:wait; }
+.login-foot { margin:0; text-align:center; color:#89928e; font-size:11px; }
 @media (max-width: 1000px) {
   .kpis { grid-template-columns:repeat(2,1fr); }
   .section-grid,.receipt-layout { grid-template-columns:1fr; }
 }
 @media (max-width: 760px) {
+  .login-page { grid-template-columns:1fr; }
+  .login-panel { min-height:250px; padding:28px 24px; }
+  .login-society-logo { width:min(330px,90%); }
+  .login-copy { margin:26px 0 0; }
+  .login-copy h1 { font-size:34px; margin-bottom:8px; }
+  .login-copy span,.login-copyright { display:none; }
+  .login-card-wrap { padding:22px 16px; }
+  .login-card { padding:28px 22px; }
   .shell { grid-template-columns:1fr; }
   .sidebar { position:fixed; inset:0 auto 0 0; width:260px; z-index:30; transform:translateX(-100%); transition:.2s; }
   .sidebar.open { transform:translateX(0); }
   .mobile-menu { display:inline-flex; }
   .topbar { padding:13px 16px; }
   .content { padding:20px 15px 40px; }
+  .toolbar { align-items:stretch; flex-direction:column; }
+  .toolbar-left,.toolbar-right { width:100%; }
+  .toolbar-left>select { width:100%; }
   .title h1 { font-size:20px; }
   .title p,.role-pill { display:none; }
   .kpis { grid-template-columns:1fr; }
