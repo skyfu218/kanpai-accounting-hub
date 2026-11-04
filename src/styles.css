@@ -129,6 +129,21 @@ td input:focus,td select:focus { outline:2px solid #aac5bb; background:white; }
 .ut-consent p { margin:4px 0; }
 .ut-consent-sign { text-align:right; font-size:18px; font-weight:700; margin-top:20px; }
 .ut-consent-sign span { display:inline-block; min-width:210px; min-height:28px; border-bottom:1px solid #111; text-align:center; }
+.ut-meeting { display:grid; grid-template-columns:95px 1fr; align-items:end; min-height:42px; margin-bottom:5px; }
+.ut-meeting span { border-bottom:1px solid #111; min-height:28px; padding:3px 8px; }
+.favorite-toggle { border:0; background:transparent; font-size:22px; line-height:1; color:#a7afab; padding:5px; }
+.favorite-toggle.active { color:var(--gold); }
+.favorite-field { padding:10px 12px; border:1px solid var(--line); border-radius:9px; background:#faf9f4; }
+.favorite-field label { display:flex; gap:8px; align-items:center; color:var(--ink); }
+.favorite-field input { width:auto; accent-color:var(--gold); }
+.common-list { display:flex; gap:8px; flex-wrap:wrap; min-height:42px; align-items:center; }
+.common-person { border:1px solid #d6ded9; background:#f6f9f6; color:var(--forest); border-radius:10px; padding:8px 10px; display:grid; grid-template-columns:auto auto; column-gap:6px; text-align:left; font-weight:700; }
+.common-person span { color:var(--gold); grid-row:1/3; align-self:center; }
+.common-person small { grid-column:2; color:var(--muted); font-size:9px; font-weight:500; }
+.common-person:hover { border-color:#8faf9f; background:#edf4f0; }
+.common-empty { color:var(--muted); font-size:12px; line-height:1.5; }
+.receipt-actions { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+.apply-message { min-height:20px; margin:-4px 0 0; color:var(--green); font-size:12px; line-height:1.5; }
 .empty-state { padding:50px 24px; text-align:center; color:var(--muted); }
 .empty-state strong { display:block; color:var(--ink); font-size:18px; margin-bottom:5px; }
 .modal-backdrop { position:fixed; inset:0; background:rgba(14,29,25,.56); display:grid; place-items:center; padding:20px; z-index:100; }
@@ -158,6 +173,7 @@ td input:focus,td select:focus { outline:2px solid #aac5bb; background:white; }
   .receipt-line { grid-template-columns:105px 1fr; }
   .signature-box { grid-template-columns:1fr; }
   .ut-receipt { padding:24px 18px; font-size:12px; min-width:690px; }
+  .receipt-actions { grid-template-columns:1fr; }
 }
 @media print {
   body { background:white; }
